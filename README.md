@@ -28,9 +28,9 @@ Este protótipo de interface é o Trabalho de Conclusão de Curso do aluno Gianl
 * Josiane M. H. Dall' Agnol: http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4708854H4
 
 # Links adicionais:
-[Web Semântica](https://www.w3.org/standards/semanticweb/)
-[Dados Conectados](https://www.w3.org/standards/semanticweb/data)
-[Vocabulário RDF Data Cube](https://www.w3.org/TR/vocab-data-cube/)
-[LOV](https://lov.okfn.org/dataset/lov/about)
-[Base de dados IDHM](http://www.atlasbrasil.org.br/2013/pt/consulta/)
-[Base de dados IFDM](http://www.firjan.com.br/ifdm/downloads/)
+* [Web Semântica](https://www.w3.org/standards/semanticweb/)
+* [Dados Conectados](https://www.w3.org/standards/semanticweb/data)
+* [Vocabulário RDF Data Cube](https://www.w3.org/TR/vocab-data-cube/)
+* [LOV](https://lov.okfn.org/dataset/lov/about)
+* [Base de dados IDHM](http://www.atlasbrasil.org.br/2013/pt/consulta/)
+* [Base de dados IFDM](http://www.firjan.com.br/ifdm/downloads/)
