@@ -23,7 +23,7 @@ As bases de dados no formato de grafos RDF com o Vocabulário Data Cube estão d
 
 Este protótipo de interface é o Trabalho de Conclusão de Curso do aluno Gianluca Bine para o curso de Ciência da Computação na Universidade Estadual do Centro-Oeste (UNICENTRO). Este trabalho foi orientado pela Prof. Dr. Josiane M. H. Dall' Agnol.
 
-# Currilos Lattes:
+# Currículos Lattes:
 * Gianluca Bine: http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8584641Z1
 * Josiane M. H. Dall' Agnol: http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4708854H4
 
