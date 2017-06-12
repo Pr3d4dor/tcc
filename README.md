@@ -34,3 +34,4 @@ Este protótipo de interface é o Trabalho de Conclusão de Curso do aluno Gianl
 * [LOV](https://lov.okfn.org/dataset/lov/about)
 * [Base de dados IDHM](http://www.atlasbrasil.org.br/2013/pt/consulta/)
 * [Base de dados IFDM](http://www.firjan.com.br/ifdm/downloads/)
+* [Linguagem SPARQL](https://www.w3.org/TR/rdf-sparql-query/)
