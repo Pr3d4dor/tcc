@@ -1,3 +1,3 @@
-<div class="container">
-    <p>This is the Error-page. Will be shown when a page (= controller / method) does not exist.</p>
-</div>
+<center>
+    <p>Essa é a página de erro. É mostrada quando uma página (= controlador / método) não existe.</p>
+</center>

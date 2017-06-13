@@ -30,6 +30,9 @@ require APP . 'config/config.php';
 // If you want to load pdoDebug via Composer, then have a look here: https://github.com/panique/pdo-debug
 require APP . 'libs/helper.php';
 
+// Biblioteca sparqllib que realiza a consulta no virtuoso
+require APP . 'libs/sparqllib.php';
+
 // load application class
 require APP . 'core/application.php';
 require APP . 'core/controller.php';

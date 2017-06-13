@@ -15,9 +15,9 @@
                 <tbody>
                 <?php foreach ($municipios as $municipio) { ?>
                     <tr>
-                        <td><?php echo htmlspecialchars(utf8_decode($municipio['municipio']), ENT_QUOTES, 'UTF-8'); ?></td>
-                        <td><?php echo htmlspecialchars(utf8_decode($municipio['uf']), ENT_QUOTES, 'UTF-8'); ?></td>
-                        <td><?php echo htmlspecialchars(utf8_decode($municipio['ifdm']), ENT_QUOTES, 'UTF-8'); ?></td>
+                        <td><?php echo $municipio['municipio']; ?></td>
+                        <td><?php echo $municipio['uf']; ?></td>
+                        <td><?php echo $municipio['ifdm']; ?></td>
                     </tr>
                 <?php } ?>
                 </tbody>

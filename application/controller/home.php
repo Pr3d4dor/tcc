@@ -16,6 +16,9 @@ class Home extends Controller
      */
     public function index()
     {
+        $municipiosIFDM = $this->model->getAllMunicipiosIFDM();
+        $municipiosIDHM = $this->model->getAllMunicipiosIDHM();
+
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/index.php';
@@ -23,28 +26,28 @@ class Home extends Controller
     }
 
     /**
-     * PAGE: exampleone
+     * PAGE: sobre
      * This method handles what happens when you move to http://yourproject/home/exampleone
      * The camelCase writing is just for better readability. The method name is case-insensitive.
      */
-    public function exampleOne()
+    public function sobre()
     {
         // load views
         require APP . 'view/_templates/header.php';
-        require APP . 'view/home/example_one.php';
+        require APP . 'view/home/sobre.php';
         require APP . 'view/_templates/footer.php';
     }
 
     /**
-     * PAGE: exampletwo
+     * PAGE: contato
      * This method handles what happens when you move to http://yourproject/home/exampletwo
      * The camelCase writing is just for better readability. The method name is case-insensitive.
      */
-    public function exampleTwo()
+    public function contato()
     {
         // load views
         require APP . 'view/_templates/header.php';
-        require APP . 'view/home/example_two.php';
+        require APP . 'view/home/contato.php';
         require APP . 'view/_templates/footer.php';
     }
 }
