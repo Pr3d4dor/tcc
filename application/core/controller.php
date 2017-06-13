@@ -1,7 +1,5 @@
 <?php
 
-include_once(ROOT_PATH . "libs/sparqllib.php");
-
 class Controller
 {
     /**

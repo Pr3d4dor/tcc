@@ -13,7 +13,7 @@
 define('ENVIRONMENT', 'development');
 
 if (ENVIRONMENT == 'development' || ENVIRONMENT == 'dev') {
-    error_reporting(E_ALL);
+    error_reporting(E_ALL & ~E_DEPRECATED);
     ini_set("display_errors", 1);
 }
 
@@ -47,15 +47,12 @@ define('URL_PROTOCOL', '//');
 define('URL_DOMAIN', $_SERVER['HTTP_HOST']);
 define('URL_SUB_FOLDER', str_replace(URL_PUBLIC_FOLDER, '', dirname($_SERVER['SCRIPT_NAME'])));
 define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
-define('ROOT_PATH', '/home/ubuntu/workspace/home/application/'); 
+define('ROOT_PATH', dirname(__FILE__) . '/../');
 
 /**
  * Configuration for: Database
  * This is the place where you define your database credentials, database type etc.
  */
 define('DB_TYPE', 'virtuoso');
-define('DB_ENDPOINT', 'ec2-34-211-116-166.us-west-2.compute.amazonaws.com:8890/sparql/');
-//define('DB_NAME', 'mini');
-//define('DB_USER', 'root');
-//define('DB_PASS', 'your_password');
+define('DB_ENDPOINT', 'http://127.0.0.1:8890/sparql/');
 define('DB_CHARSET', 'utf8');
