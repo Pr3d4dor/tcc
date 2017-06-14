@@ -19,7 +19,7 @@ Dentre os vocabulários disponíveis em LOV, utilizou-se nesta pesquisa o Vocabu
 
 Embora o uso de Dados Abertos Conectados esteja transformando a Web tradicional (Web de dados) em Web Semântica, para usuários não especialistas, estes dados ainda são difíceis de analisar e reusar. Por exemplo, quando o acesso aos dados é feito por meio de endpoints (pontos de consulta), utilizando uma linguagem de consulta como SPARQL Protocol and RDF Query Language (SPARQL). 
 
-As bases de dados no formato de grafos RDF com o Vocabulário Data Cube estão disponíveis dentro da pasta grafos no repositório. O endpoint onde esses grafos podem ser consultados está disponível no link: <LINK AQUI> e o protótipo de interface disponível neste repositório está disponível para uso no link: <LINK AQUI>.
+As bases de dados no formato de grafos RDF com o Vocabulário Data Cube estão disponíveis dentro da pasta grafos no repositório. O endpoint onde esses grafos podem ser consultados está disponível no link: http://ec2-34-211-46-34.us-west-2.compute.amazonaws.com:8890/sparql/ e o protótipo de interface disponível neste repositório está disponível para uso no link: https://tcc-pr3d4dor.c9users.io/tcc/.
 
 Este protótipo de interface é o Trabalho de Conclusão de Curso do aluno Gianluca Bine para o curso de Ciência da Computação na Universidade Estadual do Centro-Oeste (UNICENTRO). Este trabalho foi orientado pela Prof. Dr. Josiane M. H. Dall' Agnol.
 
