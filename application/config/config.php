@@ -54,5 +54,5 @@ define('ROOT_PATH', dirname(__FILE__) . '/../');
  * This is the place where you define your database credentials, database type etc.
  */
 define('DB_TYPE', 'virtuoso');
-define('DB_ENDPOINT', 'http://127.0.0.1:8890/sparql/');
+define('DB_ENDPOINT', 'http://ec2-34-211-46-34.us-west-2.compute.amazonaws.com:8890/sparql/');
 define('DB_CHARSET', 'utf8');
