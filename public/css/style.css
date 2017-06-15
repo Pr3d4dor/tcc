@@ -79,9 +79,9 @@ body {
     color: #fff;
 }
 .footer {
-    padding: 0px 20px 20px 20px;
-    margin: 33px;
-    text-align: right;
+    padding: 0px 0px 20px 0px;
+    margin: 8px;
+    text-align: center;
     font-size: 11px;
     opacity: 0.5;
 }

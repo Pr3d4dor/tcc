@@ -1,7 +1,5 @@
 <h3>Página inicial</h3>
 <hr>
-<!-- main content output -->
-<div class="row">
 
     <div class="col-sm-6">
         <center>
@@ -54,4 +52,3 @@
             </p>
         </center>
     </div>
-</div>
