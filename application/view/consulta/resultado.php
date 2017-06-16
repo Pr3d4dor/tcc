@@ -26,6 +26,7 @@
         <td>UF</td>
         <td>Ano</td>
         <td>IDHM</td>
+        <td>Classificação</td>
     </tr>
     </thead>
     <tbody>
@@ -36,6 +37,11 @@
             <td><?php echo $resultado['uf']; ?></td>
             <td><?php echo $resultado['ano']; ?></td>
             <td><?php echo $resultado['idhm']; ?></td>
+            <td>
+                <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
+                    <circle cx="5" cy="5" r="5" fill="<?php echo $resultado['cor'] ?>"></circle>
+                </svg>
+            </td>
         </tr>
     <?php } ?>
     </tbody>
@@ -70,6 +76,7 @@
         <td>UF</td>
         <td>Ano</td>
         <td>IFDM</td>
+        <td>Classificação</td>
     </tr>
     </thead>
     <tbody>
@@ -80,6 +87,11 @@
             <td><?php echo $resultado['uf']; ?></td>
             <td><?php echo $resultado['ano']; ?></td>
             <td><?php echo $resultado['ifdm']; ?></td>
+            <td>
+                <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
+                    <circle cx="5" cy="5" r="5" fill="<?php echo $resultado['cor'] ?>"></circle>
+                </svg>
+            </td>
         </tr>
     <?php } ?>
     </tbody>

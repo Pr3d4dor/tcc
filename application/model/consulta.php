@@ -117,6 +117,7 @@ class ConsultaModel
             }
         ";
 
+
         // Salvar a query no modelo e substituir os espaços por + para usar a query no virtuoso
         // Através do GET para exibir nos botões na interface para salvar nos formatos (JSON, CSV, TTL, XML)
         $this->sparqlIDHM = trim(preg_replace('/[\s\t\n\r\s]+/', ' ', $sparql));
@@ -124,9 +125,23 @@ class ConsultaModel
 
         $result = sparql_query($sparql);
 
-        // Pegar todas as linhas da query
+        // Pegar todas as linhas da query e setar a cor de acordo com o IDHM
         $resultados = array();
         while ($x = sparql_fetch_array($result)) {
+            $idhm = floatval($x['idhm']);
+
+            if ($idhm < 0.5) {
+                $x['cor'] = "red";
+            } else if ($idhm >= 0.5 && $idhm < 0.6) {
+                $x['cor'] = "orange";
+            } else if ($idhm >= 0.6 && $idhm < 0.7) {
+                $x['cor'] = "yellow";
+            } else if ($idhm >= 0.7 && $idhm < 0.8) {
+                $x['cor'] = "green";
+            } else {
+                $x['cor'] = "blue";
+            }
+
             array_push($resultados, $x);
         }
 
@@ -187,9 +202,21 @@ class ConsultaModel
 
         $result = sparql_query($sparql);
 
-        // Pegar todas as linhas da query
+        // Pegar todas as linhas da query e setar a cor de acordo com o IFDM
         $resultados = array();
         while ($x = sparql_fetch_array($result)) {
+            $ifdm = floatval($x['ifdm']);
+
+            if ($ifdm < 0.4) {
+                $x['cor'] = "red";
+            } else if ($ifdm >= 0.4 && $ifdm < 0.6) {
+                $x['cor'] = "orange";
+            } else if ($ifdm >= 0.6 && $ifdm < 0.8) {
+                $x['cor'] = "yellow";
+            } else {
+                $x['cor'] = "blue";
+            }
+
             array_push($resultados, $x);
         }
 
