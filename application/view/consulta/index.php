@@ -1,6 +1,6 @@
 <h3>Consulta</h3>
 <hr>
-<center>
+<div align="center">
     <form class="form-inline" method="post" action="<?php echo URL; ?>consulta/resultado">
 
         <label class="mr-sm-2" for="municipio">Código IBGE: </label>
@@ -36,4 +36,4 @@
             <button type="submit" class="btn btn-primary">Consultar</button>
         </div>
     </form>
-</center>
+</div>

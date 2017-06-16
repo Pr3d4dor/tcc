@@ -7,6 +7,10 @@ class ConsultaModel
      */
     private $db = null;
 
+    private $sparqlIDHM = null;
+    private $sparqlIFDM = null;
+    private $sparqlFormatos = array();
+
     /**
      * Whenever model is created, open a database connection.
      */
@@ -89,7 +93,6 @@ class ConsultaModel
         } else {
             $uf = "\"" . $uf . "\"";
         }
-
         if ($ano == "*") {
             $ano = "?ano";
         } else {
@@ -113,6 +116,11 @@ class ConsultaModel
               ?obs idhm-prop:resultado ?idhm .
             }
         ";
+
+        // Salvar a query no modelo e substituir os espaços por + para usar a query no virtuoso
+        // Através do GET para exibir nos botões na interface para salvar nos formatos (JSON, CSV, TTL, XML)
+        $this->sparqlIDHM = trim(preg_replace('/[\s\t\n\r\s]+/', ' ', $sparql));
+        $this->sparqlIDHM = str_replace(" ", "+", $this->sparqlIDHM);
 
         $result = sparql_query($sparql);
 
@@ -149,7 +157,6 @@ class ConsultaModel
         } else {
             $uf = "\"" . $uf . "\"";
         }
-
         if ($ano == "*") {
             $ano = "?ano";
         } else {
@@ -173,6 +180,10 @@ class ConsultaModel
               ?obs ifdm-prop:resultado ?ifdm .
             }
         ";
+        // Salvar a query no modelo e substituir os espaços por + para usar a query no virtuoso
+        // Através do GET para exibir nos botões na interface para salvar nos formatos (JSON, CSV, TTL, XML)
+        $this->sparqlIFDM = trim(preg_replace('/[\s\t\n\r\s]+/', ' ', $sparql));
+        $this->sparqlIFDM = str_replace(" ", "+", $this->sparqlIFDM);
 
         $result = sparql_query($sparql);
 
@@ -184,4 +195,49 @@ class ConsultaModel
 
         return $resultados;
     }
+
+    public function getUrlConsultaFormatos()
+    {
+        // Consulta SPARQL com os valores escolhids pelo usuário e com os espaços substituídos por +
+        // Para passar para o endpoint no virtuoso através de GET para permitir o usuário salvar os resultados
+        // em JSON, CSV, Turtle e XML
+        $sparqlIDHM = $this->getSparqlIDHM();
+        $sparqlIFDM = $this->getSparqlIFDM();
+
+        $this->sparqlFormatos['jsonIDHM'] = DB_ENDPOINT . "?default-graph-uri=&query={$sparqlIDHM}&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on";
+        $this->sparqlFormatos['csvIDHM'] = DB_ENDPOINT . "?default-graph-uri=&query={$sparqlIDHM}&format=text%2Fcsv&timeout=0&debug=on";
+        $this->sparqlFormatos['turtleIDHM'] = DB_ENDPOINT . "?default-graph-uri=&query={$sparqlIDHM}&format=text%2Fturtle&timeout=0&debug=on";
+        $this->sparqlFormatos['xmlIDHM'] = DB_ENDPOINT . "?default-graph-uri=&query={$sparqlIDHM}&format=application%2Fsparql-results%2Bxml&timeout=0&debug=on";
+
+        $this->sparqlFormatos['jsonIFDM'] = DB_ENDPOINT . "?default-graph-uri=&query={$sparqlIFDM}&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on";
+        $this->sparqlFormatos['csvIFDM'] = DB_ENDPOINT . "?default-graph-uri=&query={$sparqlIFDM}&format=text%2Fcsv&timeout=0&debug=on";
+        $this->sparqlFormatos['turtleIFDM'] = DB_ENDPOINT . "?default-graph-uri=&query={$sparqlIFDM}&format=text%2Fturtle&timeout=0&debug=on";
+        $this->sparqlFormatos['xmlIFDM'] = DB_ENDPOINT . "?default-graph-uri=&query={$sparqlIFDM}&format=application%2Fsparql-results%2Bxml&timeout=0&debug=on";
+
+        return $this->sparqlFormatos;
+    }
+
+    public function getSparqlIDHM()
+    {
+        return $this->sparqlIDHM;
+    }
+
+
+    public function setSparqlIDHM($sparqlIDHM)
+    {
+        $this->sparqlIDHM = $sparqlIDHM;
+    }
+
+
+    public function getSparqlIFDM()
+    {
+        return $this->sparqlIFDM;
+    }
+
+
+    public function setSparqlIFDM($sparqlIFDM)
+    {
+        $this->sparqlIFDM = $sparqlIFDM;
+    }
+
 }

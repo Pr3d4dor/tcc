@@ -55,8 +55,12 @@ class Consulta
      */
     public function resultado()
     {
+        // Resultados obtidos com os valores escolhidos pelo usuário no formulário
         $resultadosIDHM = $this->model->getResultadosIDHM();
         $resultadosIFDM = $this->model->getResultadosIFDM();
+
+        // esultados obtidos com os valores escolhidos pelo usuário nos formatos (JSON, CSV, Turle e XML)
+        $sparqlFormatos = $this->model->getUrlConsultaFormatos();
 
         // load views
         require APP . 'view/_templates/header.php';
