@@ -2,31 +2,29 @@
 
 class ConsultaModel
 {
-    /**
-     * @var null Database Connection
-     */
+    // Conexão com o endpoint
     private $db = null;
 
+    // SPARQL referentes aos parâmetros que o usuário escolheu na interface
     private $sparqlIDHM = null;
     private $sparqlIFDM = null;
+
+    // URL para consultar o endpoint através de GET para salvar nos formatos (JSON, CSV, Turle e XML)
     private $sparqlFormatos = array();
 
-    /**
-     * Whenever model is created, open a database connection.
-     */
+    // Toda vez que um modelo for instanciado, estabelecer a conexao com o endpoint
     function __construct()
     {
         self::openDatabaseConnection();
     }
 
-    /**
-     * Open the database connection with the credentials from application/config/config.php
-     */
+    // Método que estabece a conexão com o endpoint usando a configuração definida em config.php
     private function openDatabaseConnection()
     {
         $this->db = sparql_connect(DB_ENDPOINT);
     }
 
+    // Método que retorna todos os anos disponíveis no endpoint
     public static function getAllAno()
     {
         $sparql = "
@@ -50,6 +48,7 @@ class ConsultaModel
         return $resultados;
     }
 
+    // Método que retorna todas as UF's disponíveis no endpoint
     public function getAllUF()
     {
         $sparql = "
@@ -70,6 +69,8 @@ class ConsultaModel
         return $resultados;
     }
 
+    // Método que retorna todos as observações do data cube IDHM com os parâmetros escolhidos pelo usuário
+    // na interface
     public function getResultadosIDHM()
     {
         $codigo = $_POST['codigo'];
@@ -148,6 +149,8 @@ class ConsultaModel
         return $resultados;
     }
 
+    // Método que retorna todos as observações do data cube IFDM com os parâmetros escolhidos pelo usuário
+    // na interface
     public function getResultadosIFDM()
     {
 
@@ -223,6 +226,8 @@ class ConsultaModel
         return $resultados;
     }
 
+    // Método que cria as URL que serão passadas ao virtuoso com os parâmetros escolhis pelo usuário na interface
+    // e exibidas na interface para que o usuário possa salvar nos formatos (JSON, CSV, Turle e XML).
     public function getUrlConsultaFormatos()
     {
         // Consulta SPARQL com os valores escolhids pelo usuário e com os espaços substituídos por +
@@ -244,23 +249,21 @@ class ConsultaModel
         return $this->sparqlFormatos;
     }
 
+    // Getters e setters
     public function getSparqlIDHM()
     {
         return $this->sparqlIDHM;
     }
-
 
     public function setSparqlIDHM($sparqlIDHM)
     {
         $this->sparqlIDHM = $sparqlIDHM;
     }
 
-
     public function getSparqlIFDM()
     {
         return $this->sparqlIFDM;
     }
-
 
     public function setSparqlIFDM($sparqlIFDM)
     {

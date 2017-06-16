@@ -46,8 +46,39 @@
     <?php } ?>
     </tbody>
 </table>
-<p style="padding-top: 10px" align="center">Fonte: <a href="http://www.atlasbrasil.org.br/2013/pt/consulta/">Atlas
-        Brasil</a></p>
+    <div align="center" style="font-size: smaller">
+        <b style="padding: 10px 0px 0px 0px">Legenda: </b>
+        </br>
+        </br>
+        <p>
+            <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
+                <circle cx="5" cy="5" r="5" fill="red"></circle>
+            </svg>
+            IDHM < 0.5 = Muito baixo.
+
+            <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
+                <circle cx="5" cy="5" r="5" fill="orange"></circle>
+            </svg>
+            0.5 <= IDHM < 0.6 = Baixo.
+
+            <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
+                <circle cx="5" cy="5" r="5" fill="yellow"></circle>
+            </svg>
+            0.6 <= IDHM < 0.7 = Médio.
+
+            <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
+                <circle cx="5" cy="5" r="5" fill="green"></circle>
+            </svg>
+            0.7 <= IDHM < 0.8 = Alto.
+
+            <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
+                <circle cx="5" cy="5" r="5" fill="blue"></circle>
+            </svg>
+            IDHM >= 0.8 = Muito alto.
+        </p>
+    </div>
+    <p style="padding-top: 10px" align="center">Fonte: <a href="http://www.atlasbrasil.org.br/2013/pt/consulta/">Atlas
+            Brasil</a></p>
 <?php } ?>
 
 <?php if (isset($_POST['ifdm'])) { ?>
@@ -96,6 +127,34 @@
     <?php } ?>
     </tbody>
 </table>
-<p style="padding-top: 10px" align="center">Fonte: <a href="http://www.firjan.com.br/ifdm/downloads/">Sistema FIRJAN</a>
-</p>
+
+    <div align="center" style="font-size: smaller">
+        <b style="padding: 10px 0px 0px 0px">Legenda: </b>
+        </br>
+        </br>
+        <p>
+            <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
+                <circle cx="5" cy="5" r="5" fill="red"></circle>
+            </svg>
+            IFDM < 0.4 = Baixo.
+
+            <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
+                <circle cx="5" cy="5" r="5" fill="orange"></circle>
+            </svg>
+            0.4 <= IFDM < 0.6 = Regular.
+
+            <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
+                <circle cx="5" cy="5" r="5" fill="yellow"></circle>
+            </svg>
+            0.6 <= IFDM < 0.8 = Moderado.
+
+            <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
+                <circle cx="5" cy="5" r="5" fill="blue"></circle>
+            </svg>
+            IFDM >= 0.8 = Alto.
+        </p>
+    </div>
+    <p style="padding-top: 10px" align="center">Fonte: <a href="http://www.firjan.com.br/ifdm/downloads/">Sistema
+            FIRJAN</a>
+    </p>
 <?php } ?>
