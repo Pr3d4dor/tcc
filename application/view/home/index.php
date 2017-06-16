@@ -7,7 +7,7 @@
             <table>
                 <thead style="background-color: #ddd; font-weight: bold;">
                 <tr>
-                    <td>Municipio</td>
+                    <td>Município</td>
                     <td>UF</td>
                     <td>IDHM</td>
                 </tr>
@@ -33,7 +33,7 @@
             <table>
                 <thead style="background-color: #ddd; font-weight: bold;">
                 <tr>
-                    <td>Municipio</td>
+                    <td>Município</td>
                     <td>UF</td>
                     <td>IFDM</td>
                 </tr>

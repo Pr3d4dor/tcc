@@ -45,10 +45,12 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="<?php echo URL ?>">Início</a></li>
-
+                        <li><a href="<?php echo URL ?>consulta/">Consulta</a></li>
+                        <li><a href="<?php echo URL ?>home/sobre">Sobre</a></li>
+                        <li><a href="<?php echo URL ?>home/contato">Contato</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">Pesquisar<span class="caret"></span></a>
+                               aria-haspopup="true" aria-expanded="false">Dropdown<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
@@ -59,9 +61,6 @@
                                 <li><a href="#">One more separated link</a></li>
                             </ul>
                         </li>
-
-                        <li><a href="<?php echo URL ?>home/sobre">Sobre</a></li>
-                        <li><a href="<?php echo URL ?>home/contato">Contato</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->

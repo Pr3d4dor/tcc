@@ -1,13 +1,26 @@
 <?php
 
-class Model
+class HomeModel
 {
     /**
-     * @param object $db A virtuoso database connection
+     * @var null Database Connection
      */
-    function __construct($db)
+    private $db = null;
+
+    /**
+     * Whenever model is created, open a database connection.
+     */
+    function __construct()
     {
-        $this->db = $db;
+        self::openDatabaseConnection();
+    }
+
+    /**
+     * Open the database connection with the credentials from application/config/config.php
+     */
+    private function openDatabaseConnection()
+    {
+        $this->db = sparql_connect(DB_ENDPOINT);
     }
 
     public function getAllMunicipiosIFDM()
@@ -38,23 +51,20 @@ class Model
         return $resultados;
     }
 
-
     public function getAllMunicipiosIDHM()
     {
         $sparql = "
-        PREFIX qb: <http://purl.org/linked-data/cube#>
-        PREFIX idhm-prop: <http://lod.unicentro.br/dc/idhm/prop/>
-        
-        SELECT ?municipio ?uf ?idhm 
-        WHERE {
-           ?obs a qb:Observation .
-           ?obs idhm-prop:municipio ?municipio .
-           ?obs idhm-prop:uf ?uf .
-           ?obs idhm-prop:ano \"2010\" .
-           ?obs idhm-prop:resultado ?idhm .
-        }
-        ORDER BY DESC(?idhm)
-        LIMIT 10";
+            SELECT ?municipio ?uf ?idhm 
+            WHERE {
+               ?obs a qb:Observation .
+               ?obs idhm-prop:municipio ?municipio .
+               ?obs idhm-prop:uf ?uf .
+               ?obs idhm-prop:ano \"2010\" .
+               ?obs idhm-prop:resultado ?idhm .
+            }
+            ORDER BY DESC(?idhm)
+            LIMIT 10
+        ";
 
         $result = sparql_query( $sparql );
 

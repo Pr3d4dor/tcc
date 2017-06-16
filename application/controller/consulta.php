@@ -8,7 +8,7 @@
  * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
  *
  */
-class Home
+class Consulta
 {
     /**
      * @var null model
@@ -29,9 +29,9 @@ class Home
      */
     public function loadModel()
     {
-        require APP . 'model/home.php';
+        require APP . 'model/consulta.php';
         // create new "model" (and pass the database connection)
-        $this->model = new HomeModel();
+        $this->model = new ConsultaModel();
     }
 
     /**
@@ -40,38 +40,27 @@ class Home
      */
     public function index()
     {
-        $municipiosIFDM = $this->model->getAllMunicipiosIFDM();
-        $municipiosIDHM = $this->model->getAllMunicipiosIDHM();
+        $ufs = $this->model->getAllUF();
+        $anos = $this->model->getAllAno();
 
         // load views
         require APP . 'view/_templates/header.php';
-        require APP . 'view/home/index.php';
+        require APP . 'view/consulta/index.php';
         require APP . 'view/_templates/footer.php';
     }
 
     /**
-     * PAGE: sobre
-     * This method handles what happens when you move to http://yourproject/home/exampleone
-     * The camelCase writing is just for better readability. The method name is case-insensitive.
+     * PAGE: resultado
+     * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
      */
-    public function sobre()
+    public function resultado()
     {
-        // load views
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/home/sobre.php';
-        require APP . 'view/_templates/footer.php';
-    }
+        $resultadosIDHM = $this->model->getResultadosIDHM();
+        $resultadosIFDM = $this->model->getResultadosIFDM();
 
-    /**
-     * PAGE: contato
-     * This method handles what happens when you move to http://yourproject/home/exampletwo
-     * The camelCase writing is just for better readability. The method name is case-insensitive.
-     */
-    public function contato()
-    {
         // load views
         require APP . 'view/_templates/header.php';
-        require APP . 'view/home/contato.php';
+        require APP . 'view/consulta/resultado.php';
         require APP . 'view/_templates/footer.php';
     }
 }

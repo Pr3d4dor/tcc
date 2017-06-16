@@ -78,6 +78,7 @@ encontrados conjuntos de dados sobre diferentes domínios, tais como:</p>
     <li><a href="http://www.firjan.com.br/ifdm/downloads/">Base de dados IFDM</a></li>
     <li><a href="https://www.w3.org/TR/rdf-sparql-query/">Linguagem SPARQL</a></li>
     <li><a href="https://github.com/Pr3d4dor/tcc/tree/master/grafos">Grafos RDF das bases de dados</a></li>
-    <li><a href="">Endpoint do virtuoso dos grafos RDF</a></li>
+    <li><a href="http://ec2-34-211-46-34.us-west-2.compute.amazonaws.com:8890/sparql/">Endpoint do virtuoso dos grafos
+            RDF</a></li>
     <li><a href="https://github.com/Pr3d4dor/tcc">Código fonte deste projeto</a></li>
 </ul>
