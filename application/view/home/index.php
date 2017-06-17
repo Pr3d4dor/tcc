@@ -1,4 +1,4 @@
-<h3>Página inicial</h3>
+<h3 align="center">Página inicial</h3>
 <hr>
 
     <div class="col-sm-6">

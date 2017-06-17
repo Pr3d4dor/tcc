@@ -306,9 +306,7 @@ class ConsultaModel
                     $dimensoes = array();
                     array_push($dimensoes, intval($resultado['ano']));
                     array_push($dimensoes, floatval($resultado['idhm']));
-
                     array_push($ponto, $dimensoes);
-
                 }
             }
             array_push($pontos, $ponto);
@@ -317,7 +315,11 @@ class ConsultaModel
         // Configurações do gráfico
         $p->data = $pontos;
         $p->chart_type = "line";
-        $p->legend_show = true;
+        if (count($municipios) > 1) {
+            $p->legend_show = false;
+        } else {
+            $p->legend_show = true;
+        }
         $p->title = "Evolução IDHM";
         $p->ylabel = "IDHM";
         $p->xlabel = "Anos";
@@ -370,7 +372,11 @@ class ConsultaModel
         // Configurações do gráfico
         $p->data = $pontos;
         $p->chart_type = "line";
-        $p->legend_show = true;
+        if (count($municipios) > 1) {
+            $p->legend_show = false;
+        } else {
+            $p->legend_show = true;
+        }
         $p->title = "Evolução IFDM";
         $p->ylabel = "IFDM";
         $p->xlabel = "Anos";

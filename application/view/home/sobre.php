@@ -1,4 +1,4 @@
-<h3>Sobre o projeto</h3>
+<h3 align="center">Sobre o projeto</h3>
 <hr>
 <p>Muitas informações estão presentes na Internet e muitas delas são difíceis de serem entendidas por computadores e por
     pessoas devido à falta de padronização na sua publicação. Quando as informações são publicadas utilizando o conceito

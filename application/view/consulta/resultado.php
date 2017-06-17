@@ -1,4 +1,4 @@
-<h3>Resultado</h3>
+<h3 align="center">Resultado</h3>
 
 <?php if (isset($_POST['idhm'])) { ?>
 <hr>
@@ -77,9 +77,11 @@
             IDHM >= 0.8 = Muito alto.
         </p>
     </div>
-    <center>
-        <?php echo $graficoIDHM ?>
-    </center>
+    <?php if (isset($_POST['grafico'])) { ?>
+        <center>
+            <?php echo $graficoIDHM ?>
+        </center>
+    <?php } ?>
     <p style="padding-top: 10px" align="center">Fonte: <a href="http://www.atlasbrasil.org.br/2013/pt/consulta/">Atlas
             Brasil</a></p>
 <?php } ?>
@@ -156,9 +158,11 @@
             IFDM >= 0.8 = Alto.
         </p>
     </div>
-    <center>
-        <?php echo $graficoIFDM ?>
-    </center>
+    <?php if (isset($_POST['grafico'])) { ?>
+        <center>
+            <?php echo $graficoIFDM ?>
+        </center>
+    <?php } ?>
     <p style="padding-top: 10px" align="center">Fonte: <a href="http://www.firjan.com.br/ifdm/downloads/">Sistema
             FIRJAN</a>
     </p>

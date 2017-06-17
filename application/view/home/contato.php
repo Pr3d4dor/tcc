@@ -1,4 +1,4 @@
-<h3>Informações de contato</h3>
+<h3 align="center">Informações de contato</h3>
 <hr>
 <center>
     <h3>Gianluca Bine</h3>

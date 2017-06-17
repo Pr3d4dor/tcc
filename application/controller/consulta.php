@@ -66,8 +66,6 @@ class Consulta
         $graficoIDHM = $this->model->getGraficoIDHM();
         $graficoIFDM = $this->model->getGraficoIFDM();
 
-        //var_dump($graficoIDHM);
-
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/consulta/resultado.php';

@@ -1,4 +1,4 @@
-<h3>Consulta</h3>
+<h3 align="center">Consulta</h3>
 <hr>
 <div align="center">
     <form class="form-inline" method="post" action="<?php echo URL; ?>consulta/resultado">
@@ -30,6 +30,9 @@
         </label>
         <label class="form-check-label" for="ifdm">
             <input class="form-check-input" type="checkbox" id="ifdm" name="ifdm" value="ifdm"> IFDM
+        </label>
+        <label class="form-check-label" for="grafico">
+            <input class="form-check-input" type="checkbox" id="grafico" name="grafico" value="ifdm"> Gráfico
         </label>
 
         <div style="padding-top: 10px">
