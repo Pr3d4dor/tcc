@@ -29,6 +29,9 @@ require APP . 'config/config.php';
 // Biblioteca sparqllib que realiza a consulta no virtuoso
 require APP . 'libs/sparqllib.php';
 
+// Biblioteca ChartPHP que desenha os graficos
+require APP . 'libs/chartphp_dist.php';
+
 // load application class
 require APP . 'core/application.php';
 

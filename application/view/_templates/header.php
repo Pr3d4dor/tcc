@@ -21,6 +21,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+    <!-- jQuery, loaded in the recommended protocol-less way -->
+    <!-- more http://www.paulirish.com/2010/the-protocol-relative-url/ -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <!-- ChartPHP -->
+    <!-- CSS -->
+    <link href="<?php echo URL; ?>css/chartphp.css" rel="stylesheet">
+    <script src="<?php echo URL; ?>js/chartphp.js"></script>
+
 </head>
 <body>
 <div class="container">

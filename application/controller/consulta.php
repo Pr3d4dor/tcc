@@ -59,8 +59,14 @@ class Consulta
         $resultadosIDHM = $this->model->getResultadosIDHM();
         $resultadosIFDM = $this->model->getResultadosIFDM();
 
-        // esultados obtidos com os valores escolhidos pelo usuário nos formatos (JSON, CSV, Turle e XML)
+        // Resultados obtidos com os valores escolhidos pelo usuário nos formatos (JSON, CSV, Turle e XML)
         $sparqlFormatos = $this->model->getUrlConsultaFormatos();
+
+        // Graficos obtidos com os valores escolhidos pelo usuário
+        $graficoIDHM = $this->model->getGraficoIDHM();
+        $graficoIFDM = $this->model->getGraficoIFDM();
+
+        //var_dump($graficoIDHM);
 
         // load views
         require APP . 'view/_templates/header.php';

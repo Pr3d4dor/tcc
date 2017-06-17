@@ -77,6 +77,9 @@
             IDHM >= 0.8 = Muito alto.
         </p>
     </div>
+    <center>
+        <?php echo $graficoIDHM ?>
+    </center>
     <p style="padding-top: 10px" align="center">Fonte: <a href="http://www.atlasbrasil.org.br/2013/pt/consulta/">Atlas
             Brasil</a></p>
 <?php } ?>
@@ -127,7 +130,6 @@
     <?php } ?>
     </tbody>
 </table>
-
     <div align="center" style="font-size: smaller">
         <b style="padding: 10px 0px 0px 0px">Legenda: </b>
         </br>
@@ -154,7 +156,12 @@
             IFDM >= 0.8 = Alto.
         </p>
     </div>
+    <center>
+        <?php echo $graficoIFDM ?>
+    </center>
     <p style="padding-top: 10px" align="center">Fonte: <a href="http://www.firjan.com.br/ifdm/downloads/">Sistema
             FIRJAN</a>
     </p>
 <?php } ?>
+
+
