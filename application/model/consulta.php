@@ -13,6 +13,10 @@ class ConsultaModel
     private $resultadosIDHM = null;
     private $resultadosIFDM = null;
 
+    // Media IDHM e IFDM da consulta que o usuário fez
+    private $mediaIDHM = array();
+    private $mediaIFDM = array();
+
     // URL para consultar o endpoint através de GET para salvar nos formatos (JSON, CSV, Turle e XML)
     private $sparqlFormatos = array();
 
@@ -131,6 +135,7 @@ class ConsultaModel
         $result = sparql_query($sparql);
 
         // Pegar todas as linhas da query e setar a cor de acordo com o IDHM
+        $totalIDHM = 0.0;
         $resultados = array();
         while ($x = sparql_fetch_array($result)) {
             $idhm = floatval($x['idhm']);
@@ -147,7 +152,27 @@ class ConsultaModel
                 $x['cor'] = "blue";
             }
 
+            $totalIDHM += $idhm;
+
             array_push($resultados, $x);
+        }
+
+        if (count($resultados) > 0) {
+            $mediaIDHM['valor'] = floatval($totalIDHM / count($resultados));
+
+            if ($mediaIDHM['valor'] < 0.5) {
+                $mediaIDHM['cor'] = "red";
+            } else if ($mediaIDHM['valor'] >= 0.5 && $mediaIDHM['valor'] < 0.6) {
+                $mediaIDHM['cor'] = "orange";
+            } else if ($mediaIDHM['valor'] >= 0.6 && $mediaIDHM['valor'] < 0.7) {
+                $mediaIDHM['cor'] = "yellow";
+            } else if ($mediaIDHM['valor'] >= 0.7 && $mediaIDHM['valor'] < 0.8) {
+                $mediaIDHM['cor'] = "green";
+            } else {
+                $mediaIDHM['cor'] = "blue";
+            }
+
+            $this->mediaIDHM = $mediaIDHM;
         }
 
         $this->resultadosIDHM = $resultados;
@@ -159,7 +184,6 @@ class ConsultaModel
     // na interface
     public function getResultadosIFDM()
     {
-
         $codigo = $_POST['codigo'];
         $municipio = $_POST['municipio'];
         $uf = $_POST['uf'];
@@ -213,6 +237,7 @@ class ConsultaModel
 
         // Pegar todas as linhas da query e setar a cor de acordo com o IFDM
         $resultados = array();
+        $totalIFDM = 0.0;
         while ($x = sparql_fetch_array($result)) {
             $ifdm = floatval($x['ifdm']);
 
@@ -226,7 +251,25 @@ class ConsultaModel
                 $x['cor'] = "blue";
             }
 
+            $totalIFDM += $ifdm;
+
             array_push($resultados, $x);
+        }
+
+        if (count($resultados) > 0) {
+            $mediaIFDM['valor'] = floatval($totalIFDM / count($resultados));
+
+            if ($mediaIFDM['valor'] < 0.4) {
+                $mediaIFDM['cor'] = "red";
+            } else if ($mediaIFDM['valor'] >= 0.4 && $mediaIFDM['valor'] < 0.6) {
+                $mediaIFDM['cor'] = "orange";
+            } else if ($mediaIFDM['valor'] >= 0.6 && $mediaIFDM['valor'] < 0.8) {
+                $mediaIFDM['cor'] = "yellow";
+            } else {
+                $mediaIFDM['cor'] = "blue";
+            }
+
+            $this->mediaIFDM = $mediaIFDM;
         }
 
         $this->resultadosIFDM = $resultados;
@@ -267,8 +310,6 @@ class ConsultaModel
         $this->sparqlIDHM = $sparqlIDHM;
     }
 
-    // Getters e setters
-
     public function getSparqlIFDM()
     {
         return $this->sparqlIFDM;
@@ -278,6 +319,8 @@ class ConsultaModel
     {
         $this->sparqlIFDM = $sparqlIFDM;
     }
+
+    // Getters e setters
 
     public function getGraficoIDHM()
     {
@@ -389,6 +432,27 @@ class ConsultaModel
 
         // Retornando o código HTML
         return $out;
+    }
+
+    public function getMediaIDHM()
+    {
+        return $this->mediaIDHM;
+    }
+
+    public function setMediaIDHM($mediaIDHM)
+    {
+        $this->mediaIDHM = $mediaIDHM;
+    }
+
+    public function getMediaIFDM()
+    {
+        return $this->mediaIFDM;
+    }
+
+
+    public function setMediaIFDM($mediaIFDM)
+    {
+        $this->mediaIFDM = $mediaIFDM;
     }
 
 }

@@ -66,6 +66,10 @@ class Consulta
         $graficoIDHM = $this->model->getGraficoIDHM();
         $graficoIFDM = $this->model->getGraficoIFDM();
 
+        // Medias
+        $mediaIDHM = $this->model->getMediaIDHM();
+        $mediaIFDM = $this->model->getMediaIFDM();
+
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/consulta/resultado.php';

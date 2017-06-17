@@ -44,6 +44,18 @@
             </td>
         </tr>
     <?php } ?>
+    <tr bgcolor="#dcdcdc">
+        <td>--</td>
+        <td>--</td>
+        <td>--</td>
+        <td>--</td>
+        <td><?php echo number_format((float)$mediaIDHM['valor'], 3, '.', ''); ?></td>
+        <td>
+            <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
+                <circle cx="5" cy="5" r="5" fill="<?php echo $mediaIDHM['cor'] ?>"></circle>
+            </svg>
+        </td>
+    </tr>
     </tbody>
 </table>
     <div align="center" style="font-size: smaller">
@@ -77,6 +89,7 @@
             IDHM >= 0.8 = Muito alto.
         </p>
     </div>
+
     <?php if (isset($_POST['grafico'])) { ?>
         <center>
             <?php echo $graficoIDHM ?>
@@ -130,6 +143,18 @@
             </td>
         </tr>
     <?php } ?>
+    <tr bgcolor="#dcdcdc">
+        <td>--</td>
+        <td>--</td>
+        <td>--</td>
+        <td>--</td>
+        <td><?php echo number_format((float)$mediaIFDM['valor'], 3, '.', ''); ?></td>
+        <td>
+            <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
+                <circle cx="5" cy="5" r="5" fill="<?php echo $mediaIFDM['cor'] ?>"></circle>
+            </svg>
+        </td>
+    </tr>
     </tbody>
 </table>
     <div align="center" style="font-size: smaller">
