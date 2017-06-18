@@ -382,7 +382,7 @@ class ConsultaModel
 
     public function getGraficoIFDM()
     {
-        if (count($this->resultadosIFDHM) > 0) {
+        if (count($this->resultadosIFDM) > 0) {
             // Instânciando o objeto que representa o gráfico
             $p = new chartphp();
 
