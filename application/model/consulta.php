@@ -10,8 +10,8 @@ class ConsultaModel
     private $sparqlIFDM = null;
 
     // Resultados IDHM e IFDM
-    private $resultadosIDHM = null;
-    private $resultadosIFDM = null;
+    private $resultadosIDHM = array();
+    private $resultadosIFDM = array();
 
     // Media IDHM e IFDM da consulta que o usuário fez
     private $mediaIDHM = array();
@@ -125,7 +125,6 @@ class ConsultaModel
               ?obs idhm-prop:resultado ?idhm .
             }
         ";
-
 
         // Salvar a query no modelo e substituir os espaços por + para usar a query no virtuoso
         // Através do GET para exibir nos botões na interface para salvar nos formatos (JSON, CSV, TTL, XML)
@@ -324,54 +323,58 @@ class ConsultaModel
 
     public function getGraficoIDHM()
     {
+        if (count($this->resultadosIDHM) > 0) {
 
-        // Instânciando o objeto que representa o gráfico
-        $p = new chartphp();
+            // Instânciando o objeto que representa o gráfico
+            $p = new chartphp();
 
-        // Ver quantos municipios estão nos resultados da consulta para poder exibir o gráfico
-        $municipios = array();
-        foreach ($this->resultadosIDHM as $resultado) {
-            $municipio = $resultado['municipio'];
-
-            if (!in_array($municipio, $municipios)) {
-                array_push($municipios, $resultado['municipio']);
-            }
-        }
-
-        // Gerando os pontos do gráfico
-        $pontos = array();
-        for ($i = 0; $i < count($municipios); $i++) {
-            $municipio = $municipios[$i];
-
-            $ponto = array();
+            // Ver quantos municipios estão nos resultados da consulta para poder exibir o gráfico
+            $municipios = array();
             foreach ($this->resultadosIDHM as $resultado) {
-                if ($resultado['municipio'] == $municipio) {
-                    $dimensoes = array();
-                    array_push($dimensoes, intval($resultado['ano']));
-                    array_push($dimensoes, floatval($resultado['idhm']));
-                    array_push($ponto, $dimensoes);
+                $municipio = $resultado['municipio'];
+
+                if (!in_array($municipio, $municipios)) {
+                    array_push($municipios, $resultado['municipio']);
                 }
             }
-            array_push($pontos, $ponto);
-        }
 
-        // Configurações do gráfico
-        $p->data = $pontos;
-        $p->chart_type = "line";
-        if (count($municipios) > 1) {
-            $p->legend_show = false;
+            // Gerando os pontos do gráfico
+            $pontos = array();
+            for ($i = 0; $i < count($municipios); $i++) {
+                $municipio = $municipios[$i];
+
+                $ponto = array();
+                foreach ($this->resultadosIDHM as $resultado) {
+                    if ($resultado['municipio'] == $municipio) {
+                        $dimensoes = array();
+                        array_push($dimensoes, intval($resultado['ano']));
+                        array_push($dimensoes, floatval($resultado['idhm']));
+                        array_push($ponto, $dimensoes);
+                    }
+                }
+                array_push($pontos, $ponto);
+            }
+
+            // Configurações do gráfico
+            $p->data = $pontos;
+            $p->chart_type = "line";
+            if (count($municipios) > 1) {
+                $p->legend_show = false;
+            } else {
+                $p->legend_show = true;
+            }
+            $p->title = "Evolução IDHM";
+            $p->ylabel = "IDHM";
+            $p->xlabel = "Ano";
+            $p->height = "300px";
+            $p->width = "500px";
+            $p->series_label = $municipios;
+
+            // Renderizando o gráfico (código HTML)
+            $out = $p->render('c1');
         } else {
-            $p->legend_show = true;
+            $out = "";
         }
-        $p->title = "Evolução IDHM";
-        $p->ylabel = "IDHM";
-        $p->xlabel = "Anos";
-        $p->height = "300px";
-        $p->width = "500px";
-        $p->series_label = $municipios;
-
-        // Renderizando o gráfico (código HTML)
-        $out = $p->render('c1');
 
         // Retornando o código HTML
         return $out;
@@ -379,56 +382,59 @@ class ConsultaModel
 
     public function getGraficoIFDM()
     {
+        if (count($this->resultadosIFDHM) > 0) {
+            // Instânciando o objeto que representa o gráfico
+            $p = new chartphp();
 
-        // Instânciando o objeto que representa o gráfico
-        $p = new chartphp();
-
-        // Ver quantos municipios estão nos resultados da consulta para poder exibir o gráfico
-        $municipios = array();
-        foreach ($this->resultadosIFDM as $resultado) {
-            $municipio = $resultado['municipio'];
-
-            if (!in_array($municipio, $municipios)) {
-                array_push($municipios, $resultado['municipio']);
-            }
-        }
-
-        // Gerando os pontos do gráfico
-        $pontos = array();
-        for ($i = 0; $i < count($municipios); $i++) {
-            $municipio = $municipios[$i];
-
-            $ponto = array();
+            // Ver quantos municipios estão nos resultados da consulta para poder exibir o gráfico
+            $municipios = array();
             foreach ($this->resultadosIFDM as $resultado) {
-                if ($resultado['municipio'] == $municipio) {
-                    $dimensoes = array();
-                    array_push($dimensoes, intval($resultado['ano']));
-                    array_push($dimensoes, floatval($resultado['ifdm']));
+                $municipio = $resultado['municipio'];
 
-                    array_push($ponto, $dimensoes);
-
+                if (!in_array($municipio, $municipios)) {
+                    array_push($municipios, $resultado['municipio']);
                 }
             }
-            array_push($pontos, $ponto);
-        }
 
-        // Configurações do gráfico
-        $p->data = $pontos;
-        $p->chart_type = "line";
-        if (count($municipios) > 1) {
-            $p->legend_show = false;
+            // Gerando os pontos do gráfico
+            $pontos = array();
+            for ($i = 0; $i < count($municipios); $i++) {
+                $municipio = $municipios[$i];
+
+                $ponto = array();
+                foreach ($this->resultadosIFDM as $resultado) {
+                    if ($resultado['municipio'] == $municipio) {
+                        $dimensoes = array();
+                        array_push($dimensoes, intval($resultado['ano']));
+                        array_push($dimensoes, floatval($resultado['ifdm']));
+
+                        array_push($ponto, $dimensoes);
+
+                    }
+                }
+                array_push($pontos, $ponto);
+            }
+
+            // Configurações do gráfico
+            $p->data = $pontos;
+            $p->chart_type = "line";
+            if (count($municipios) > 1) {
+                $p->legend_show = false;
+            } else {
+                $p->legend_show = true;
+            }
+            $p->title = "Evolução IFDM";
+            $p->ylabel = "IFDM";
+            $p->xlabel = "Ano";
+            $p->height = "400px";
+            $p->width = "500px";
+            $p->series_label = $municipios;
+
+            // Renderizando o gráfico (código HTML)
+            $out = $p->render('c2');
         } else {
-            $p->legend_show = true;
+            $out = "";
         }
-        $p->title = "Evolução IFDM";
-        $p->ylabel = "IFDM";
-        $p->xlabel = "Anos";
-        $p->height = "400px";
-        $p->width = "500px";
-        $p->series_label = $municipios;
-
-        // Renderizando o gráfico (código HTML)
-        $out = $p->render('c2');
 
         // Retornando o código HTML
         return $out;
