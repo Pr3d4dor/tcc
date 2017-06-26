@@ -1,58 +1,44 @@
 <?php
 
-/**
- * Class Home
- *
- * Please note:
- * Don't use the same name for class and method, as this might trigger an (unintended) __construct of the class.
- * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
- *
- */
+// Classe consulta
+// Recebe os resultados do formulário de consulta e
+// usa a classe ConsultaModel para fazer a lógica
+// para exibir os resultados
+// na página resultados
+// gerencia:{url}/consulta
 class Consulta
 {
-    /**
-     * @var null model
-     */
+    // O modelo utilizado pelo controller
     public $model = null;
 
-    /**
-     * Whenever controller is created, open a database connection too and load "the model".
-     */
+    // Toda vez que um controlador for instanciado, estabelecer conexão ao virtuoso
+    // e carregar o modelo
     function __construct()
     {
         $this->loadModel();
     }
 
-    /**
-     * Loads the "model".
-     * @return object model
-     */
+    // Método que carrega o modelo
     public function loadModel()
     {
         require APP . 'model/consulta.php';
-        // create new "model" (and pass the database connection)
         $this->model = new ConsultaModel();
     }
 
-    /**
-     * PAGE: index
-     * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
-     */
+    // Método index, quando o usuário acessar {url}/consulta/ ou {url}/consulta/index/
     public function index()
     {
+        // Pegar as ufs e anos disponiveis no virtuoso para exibir no formulário da view consulta
         $ufs = $this->model->getAllUF();
         $anos = $this->model->getAllAno();
 
-        // load views
+        // Carregar as views
         require APP . 'view/_templates/header.php';
         require APP . 'view/consulta/index.php';
         require APP . 'view/_templates/footer.php';
     }
 
-    /**
-     * PAGE: resultado
-     * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
-     */
+    // Método resultado, quando o usuário acessar {url}/consulta/resultado/
     public function resultado()
     {
         // Resultados obtidos com os valores escolhidos pelo usuário no formulário
@@ -70,7 +56,7 @@ class Consulta
         $mediaIDHM = $this->model->getMediaIDHM();
         $mediaIFDM = $this->model->getMediaIFDM();
 
-        // load views
+        // Carregar as views
         require APP . 'view/_templates/header.php';
         require APP . 'view/consulta/resultado.php';
         require APP . 'view/_templates/footer.php';

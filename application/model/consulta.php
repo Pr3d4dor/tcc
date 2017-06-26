@@ -1,11 +1,18 @@
 <?php
 
+// Classe que realiza toda a lógica
+// para guardar os dados do formulário
+// da página de consulta e com isso
+// realizar as consultas adequadas
+// no virtuoso e retornar resultados
+// para o controller Consulta utilizar
+// nas views corretas
 class ConsultaModel
 {
     // Conexão com o endpoint
     private $db = null;
 
-    // SPARQL referentes aos parâmetros que o usuário escolheu na interface
+    // SPARQL referentes aos parâmetros que o usuário escolheu no formulário de consulta
     private $sparqlIDHM = null;
     private $sparqlIFDM = null;
 
@@ -21,6 +28,7 @@ class ConsultaModel
     private $sparqlFormatos = array();
 
     // Toda vez que um modelo for instanciado, estabelecer a conexao com o endpoint
+    // e obter os dados do formulário
     function __construct()
     {
         self::openDatabaseConnection();
@@ -299,15 +307,23 @@ class ConsultaModel
         return $this->sparqlFormatos;
     }
 
+    // Método que usa o framework charts 4 PHP para gerar o gráfico da consulta no data
+    // cube IDHM e retornar o código HTML referente ao gráfico
+
     public function getSparqlIDHM()
     {
         return $this->sparqlIDHM;
     }
 
+    // Método que usa o framework charts 4 PHP para gerar o gráfico da consulta no data
+    // cube IFDM e retornar o código HTML referente ao gráfico
+
     public function setSparqlIDHM($sparqlIDHM)
     {
         $this->sparqlIDHM = $sparqlIDHM;
     }
+
+    // Getters e setters
 
     public function getSparqlIFDM()
     {
@@ -318,8 +334,6 @@ class ConsultaModel
     {
         $this->sparqlIFDM = $sparqlIFDM;
     }
-
-    // Getters e setters
 
     public function getGraficoIDHM()
     {
@@ -454,7 +468,6 @@ class ConsultaModel
     {
         return $this->mediaIFDM;
     }
-
 
     public function setMediaIFDM($mediaIFDM)
     {

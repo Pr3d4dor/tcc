@@ -1,75 +1,55 @@
 <?php
 
-/**
- * Class Home
- *
- * Please note:
- * Don't use the same name for class and method, as this might trigger an (unintended) __construct of the class.
- * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
- *
- */
+// Classe home
+// Controla a página inicial e usa a classe
+// HomeModel para pegar os dados do virtuoso
+// para exibir as tabelas IDHM e IFDM da view index
+// gerencia:{url}/home
 class Home
 {
-    /**
-     * @var null model
-     */
+    // O modelo utilizado pelo controller
     public $model = null;
 
-    /**
-     * Whenever controller is created, open a database connection too and load "the model".
-     */
+    // Toda vez que um controlador for instanciado, estabelecer conexão ao virtuoso
+    // e carregar o modelo
     function __construct()
     {
         $this->loadModel();
     }
 
-    /**
-     * Loads the "model".
-     * @return object model
-     */
+    // Método que carrega o modelo
     public function loadModel()
     {
         require APP . 'model/home.php';
-        // create new "model" (and pass the database connection)
         $this->model = new HomeModel();
     }
 
-    /**
-     * PAGE: index
-     * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
-     */
+    // Método index, quando o usuário acessar {url}/home/ ou {url}/home/index/
     public function index()
     {
+        // Pegar as observaçõs dos anos mais recente possíveis para exibir na tabela da view index
         $municipiosIFDM = $this->model->getAllMunicipiosIFDM();
         $municipiosIDHM = $this->model->getAllMunicipiosIDHM();
 
-        // load views
+        // Carregar as views
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/index.php';
         require APP . 'view/_templates/footer.php';
     }
 
-    /**
-     * PAGE: sobre
-     * This method handles what happens when you move to http://yourproject/home/exampleone
-     * The camelCase writing is just for better readability. The method name is case-insensitive.
-     */
+    // Método index, quando o usuário acessar {url}/home/sobre/
     public function sobre()
     {
-        // load views
+        // Carregar as views
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/sobre.php';
         require APP . 'view/_templates/footer.php';
     }
 
-    /**
-     * PAGE: contato
-     * This method handles what happens when you move to http://yourproject/home/exampletwo
-     * The camelCase writing is just for better readability. The method name is case-insensitive.
-     */
+    // Método index, quando o usuário acessar {url}/home/contato/
     public function contato()
     {
-        // load views
+        // Carregar as views
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/contato.php';
         require APP . 'view/_templates/footer.php';

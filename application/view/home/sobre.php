@@ -67,6 +67,18 @@ encontrados conjuntos de dados sobre diferentes domínios, tais como:</p>
     </li>
 </ul>
 
+<h3>Licença dos dados</h3>
+<hr>
+<p>Como esta interface utiliza os dados do site AtlasBrasil e do Sistema FIRJAN, onde a política de dados é:</p>
+<ul>
+    <li>A política de uso de dados permite que outros usuários remixem, adaptem e criem a partir do seu conteúdo para
+        fins não comerciais, e embora os novos trabalhos tenham de lhe atribuir o devido crédito e não possam ser usados
+        para fins comerciais, os usuários não têm de licenciar esses trabalhos derivados sob os mesmos termos.
+    </li>
+</ul>
+<p>Portanto, os dados disponibilizados nesta interface podem ser remixados, adaptados e criados para fins não
+    comerciais.</p>
+
 <h3>Links adicionais</h3>
 <hr>
 <ul>
