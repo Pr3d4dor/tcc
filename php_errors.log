@@ -1,0 +1,12 @@
+[27-Jun-2017 16:44:36 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/ubuntu/workspace/tcc/application/model/consulta.php on line 419
+[27-Jun-2017 16:44:36 UTC] PHP Stack trace:
+[27-Jun-2017 16:44:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/tcc/public/index.php:0
+[27-Jun-2017 16:44:36 UTC] PHP   2. Application->__construct() /home/ubuntu/workspace/tcc/public/index.php:39
+[27-Jun-2017 16:44:36 UTC] PHP   3. Consulta->resultado() /home/ubuntu/workspace/tcc/application/core/application.php:46
+[27-Jun-2017 16:44:36 UTC] PHP   4. ConsultaModel->getGraficoIFDM() /home/ubuntu/workspace/tcc/application/controller/consulta.php:53
+[27-Jun-2017 16:46:38 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/ubuntu/workspace/tcc/application/model/consulta.php on line 419
+[27-Jun-2017 16:46:38 UTC] PHP Stack trace:
+[27-Jun-2017 16:46:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/tcc/public/index.php:0
+[27-Jun-2017 16:46:38 UTC] PHP   2. Application->__construct() /home/ubuntu/workspace/tcc/public/index.php:39
+[27-Jun-2017 16:46:38 UTC] PHP   3. Consulta->resultado() /home/ubuntu/workspace/tcc/application/core/application.php:46
+[27-Jun-2017 16:46:38 UTC] PHP   4. ConsultaModel->getGraficoIFDM() /home/ubuntu/workspace/tcc/application/controller/consulta.php:53

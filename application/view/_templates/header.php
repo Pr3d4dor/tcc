@@ -26,7 +26,14 @@
 
     <!-- jQuery, loaded in the recommended protocol-less way -->
     <!-- more http://www.paulirish.com/2010/the-protocol-relative-url/ -->
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    
+    <!-- jQuery, loaded in the recommended protocol-less way -->
+    <!-- more http://www.paulirish.com/2010/the-protocol-relative-url/ -->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    
+    <!-- Datatables CSS -->
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
 
     <!-- ChartPHP -->
     <!-- CSS -->

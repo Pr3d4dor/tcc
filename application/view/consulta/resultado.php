@@ -18,7 +18,8 @@
                  width="24" height="24">
         </a>
     </div>
-<table class="table table-striped">
+<br>
+<table class="table table-striped display">
     <thead style="background-color: #ddd; font-weight: bold;">
     <tr>
         <td>Código IBGE</td>
