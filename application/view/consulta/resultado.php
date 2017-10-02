@@ -40,13 +40,15 @@
             <td><?php echo $resultado['idhm']; ?></td>
             <td>
                 <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
-                    <circle cx="5" cy="5" r="5" fill="<?php echo $resultado['cor'] ?>"></circle>
+                    <circle cx="5" cy="5" r="5" fill="<?php echo $resultado['cor'] ?>"><?php echo $resultado['cor'] ?></circle>
                 </svg>
             </td>
         </tr>
     <?php } ?>
-    <tr bgcolor="#dcdcdc">
-        <td>--</td>
+
+    </tbody>
+    <tr bgcolor="#dcdcdc" style="font-weight: bold">
+        <td>Média</td>
         <td>--</td>
         <td>--</td>
         <td>--</td>
@@ -57,7 +59,6 @@
             </svg>
         </td>
     </tr>
-    </tbody>
 </table>
     <div align="center" style="font-size: smaller">
         <b style="padding: 10px 0px 0px 0px">Legenda: </b>
@@ -140,12 +141,13 @@
             <td><?php echo $resultado['ifdm']; ?></td>
             <td>
                 <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10">
-                    <circle cx="5" cy="5" r="5" fill="<?php echo $resultado['cor'] ?>"></circle>
+                    <circle cx="5" cy="5" r="5" fill="<?php echo $resultado['cor'] ?>"><?php echo $resultado['cor'] ?></circle>
                 </svg>
             </td>
         </tr>
     <?php } ?>
-    <tr bgcolor="#dcdcdc">
+    </tbody>
+    <tr bgcolor="#dcdcdc" style="font-weight: bold">
         <td>--</td>
         <td>--</td>
         <td>--</td>
@@ -157,7 +159,6 @@
             </svg>
         </td>
     </tr>
-    </tbody>
 </table>
     <div align="center" style="font-size: smaller">
         <b style="padding: 10px 0px 0px 0px">Legenda: </b>
