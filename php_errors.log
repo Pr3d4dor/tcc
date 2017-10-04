@@ -10,3 +10,59 @@
 [27-Jun-2017 16:46:38 UTC] PHP   2. Application->__construct() /home/ubuntu/workspace/tcc/public/index.php:39
 [27-Jun-2017 16:46:38 UTC] PHP   3. Consulta->resultado() /home/ubuntu/workspace/tcc/application/core/application.php:46
 [27-Jun-2017 16:46:38 UTC] PHP   4. ConsultaModel->getGraficoIFDM() /home/ubuntu/workspace/tcc/application/controller/consulta.php:53
+[03-Oct-2017 17:51:31 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/tcc/application/libs/sparqllib.php on line 20
+[03-Oct-2017 17:51:31 UTC] PHP Stack trace:
+[03-Oct-2017 17:51:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/tcc/public/index.php:0
+[03-Oct-2017 17:51:31 UTC] PHP   2. Application->__construct() /home/ubuntu/workspace/tcc/public/index.php:39
+[03-Oct-2017 17:51:31 UTC] PHP   3. Home->index() /home/ubuntu/workspace/tcc/application/core/application.php:28
+[03-Oct-2017 17:51:31 UTC] PHP   4. HomeModel->getAllMunicipiosIFDM() /home/ubuntu/workspace/tcc/application/controller/home.php:31
+[03-Oct-2017 17:51:31 UTC] PHP   5. sparql_fetch_array() /home/ubuntu/workspace/tcc/application/model/home.php:71
+[03-Oct-2017 17:51:36 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/tcc/application/libs/sparqllib.php on line 20
+[03-Oct-2017 17:51:36 UTC] PHP Stack trace:
+[03-Oct-2017 17:51:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/tcc/public/index.php:0
+[03-Oct-2017 17:51:36 UTC] PHP   2. Application->__construct() /home/ubuntu/workspace/tcc/public/index.php:39
+[03-Oct-2017 17:51:36 UTC] PHP   3. Home->index() /home/ubuntu/workspace/tcc/application/core/application.php:28
+[03-Oct-2017 17:51:36 UTC] PHP   4. HomeModel->getAllMunicipiosIFDM() /home/ubuntu/workspace/tcc/application/controller/home.php:31
+[03-Oct-2017 17:51:36 UTC] PHP   5. sparql_fetch_array() /home/ubuntu/workspace/tcc/application/model/home.php:71
+[03-Oct-2017 17:51:42 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/tcc/application/libs/sparqllib.php on line 20
+[03-Oct-2017 17:51:42 UTC] PHP Stack trace:
+[03-Oct-2017 17:51:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/tcc/public/index.php:0
+[03-Oct-2017 17:51:42 UTC] PHP   2. Application->__construct() /home/ubuntu/workspace/tcc/public/index.php:39
+[03-Oct-2017 17:51:42 UTC] PHP   3. Home->index() /home/ubuntu/workspace/tcc/application/core/application.php:28
+[03-Oct-2017 17:51:42 UTC] PHP   4. HomeModel->getAllMunicipiosIFDM() /home/ubuntu/workspace/tcc/application/controller/home.php:31
+[03-Oct-2017 17:51:42 UTC] PHP   5. sparql_fetch_array() /home/ubuntu/workspace/tcc/application/model/home.php:71
+[03-Oct-2017 17:52:14 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/tcc/application/libs/sparqllib.php on line 20
+[03-Oct-2017 17:52:14 UTC] PHP Stack trace:
+[03-Oct-2017 17:52:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/tcc/public/index.php:0
+[03-Oct-2017 17:52:14 UTC] PHP   2. Application->__construct() /home/ubuntu/workspace/tcc/public/index.php:39
+[03-Oct-2017 17:52:14 UTC] PHP   3. Home->index() /home/ubuntu/workspace/tcc/application/core/application.php:28
+[03-Oct-2017 17:52:14 UTC] PHP   4. HomeModel->getAllMunicipiosIFDM() /home/ubuntu/workspace/tcc/application/controller/home.php:31
+[03-Oct-2017 17:52:14 UTC] PHP   5. sparql_fetch_array() /home/ubuntu/workspace/tcc/application/model/home.php:71
+[03-Oct-2017 20:02:48 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/tcc/application/libs/sparqllib.php on line 20
+[03-Oct-2017 20:02:48 UTC] PHP Stack trace:
+[03-Oct-2017 20:02:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/tcc/public/index.php:0
+[03-Oct-2017 20:02:48 UTC] PHP   2. Application->__construct() /home/ubuntu/workspace/tcc/public/index.php:39
+[03-Oct-2017 20:02:48 UTC] PHP   3. Consulta->index() /home/ubuntu/workspace/tcc/application/core/application.php:52
+[03-Oct-2017 20:02:48 UTC] PHP   4. ConsultaModel->getAllUF() /home/ubuntu/workspace/tcc/application/controller/consulta.php:32
+[03-Oct-2017 20:02:48 UTC] PHP   5. sparql_fetch_array() /home/ubuntu/workspace/tcc/application/model/consulta.php:81
+[03-Oct-2017 20:03:39 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/tcc/application/libs/sparqllib.php on line 20
+[03-Oct-2017 20:03:39 UTC] PHP Stack trace:
+[03-Oct-2017 20:03:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/tcc/public/index.php:0
+[03-Oct-2017 20:03:39 UTC] PHP   2. Application->__construct() /home/ubuntu/workspace/tcc/public/index.php:39
+[03-Oct-2017 20:03:39 UTC] PHP   3. Home->index() /home/ubuntu/workspace/tcc/application/core/application.php:28
+[03-Oct-2017 20:03:39 UTC] PHP   4. HomeModel->getAllMunicipiosIFDM() /home/ubuntu/workspace/tcc/application/controller/home.php:31
+[03-Oct-2017 20:03:39 UTC] PHP   5. sparql_fetch_array() /home/ubuntu/workspace/tcc/application/model/home.php:71
+[03-Oct-2017 20:07:54 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/tcc/application/libs/sparqllib.php on line 20
+[03-Oct-2017 20:07:54 UTC] PHP Stack trace:
+[03-Oct-2017 20:07:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/tcc/public/index.php:0
+[03-Oct-2017 20:07:54 UTC] PHP   2. Application->__construct() /home/ubuntu/workspace/tcc/public/index.php:39
+[03-Oct-2017 20:07:54 UTC] PHP   3. Consulta->index() /home/ubuntu/workspace/tcc/application/core/application.php:52
+[03-Oct-2017 20:07:54 UTC] PHP   4. ConsultaModel->getAllUF() /home/ubuntu/workspace/tcc/application/controller/consulta.php:32
+[03-Oct-2017 20:07:54 UTC] PHP   5. sparql_fetch_array() /home/ubuntu/workspace/tcc/application/model/consulta.php:81
+[03-Oct-2017 20:07:57 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/tcc/application/libs/sparqllib.php on line 20
+[03-Oct-2017 20:07:57 UTC] PHP Stack trace:
+[03-Oct-2017 20:07:57 UTC] PHP   1. {main}() /home/ubuntu/workspace/tcc/public/index.php:0
+[03-Oct-2017 20:07:57 UTC] PHP   2. Application->__construct() /home/ubuntu/workspace/tcc/public/index.php:39
+[03-Oct-2017 20:07:57 UTC] PHP   3. Home->index() /home/ubuntu/workspace/tcc/application/core/application.php:28
+[03-Oct-2017 20:07:57 UTC] PHP   4. HomeModel->getAllMunicipiosIFDM() /home/ubuntu/workspace/tcc/application/controller/home.php:31
+[03-Oct-2017 20:07:57 UTC] PHP   5. sparql_fetch_array() /home/ubuntu/workspace/tcc/application/model/home.php:71
